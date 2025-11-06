@@ -1,42 +1,107 @@
 #root {
-  max-width: 1280px;
+  
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  /* padding: 2rem;
+  text-align: center; */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.contenedor-gral{
+  width: 100%;
+  height: auto;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.headline1 {
+
+color: var(--color-cyan-19, #223B3E);
+text-align: center;
+
+/* Headline1 */
+font-family: Atma;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: 24px; /* 133.333% */
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.titulo-importante {
+color: var(--color-green-20, #2A3B2D);
+text-align: center;
+
+/* Títulos importantes */
+font-family: Atma;
+font-size: 28px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 133.333% */
+}
+.subtitulo-importante{
+color: var(--Foundation-Secundario-secundario-400, #4E6265);
+text-align: center;
+
+/* Subtítulo importante */
+font-family: "Sans Serif Collection";
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 32px; /* 125% */
+}
+.texto-descriptivo{
+color: var(--Foundation-Secundario-secundario-700, #182A2C);
+font-family: "Sans Serif Collection";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px;
+}
+.texto-card{
+  color: var(--Foundation-Secundario-secundario-400, #4E6265);
+
+/* Texto-card */
+font-family: "Sans Serif Collection";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; /* 125% */
+
+}
+@media (max-width: 780px){
+ .contenedor-gral{
+  padding: 24px;
+  
+ }
+ .headline1 {
+  font-size: 28px;
+ }
+ .titulo-importante {
+  font-size: 24px;
+ }
+ .subtitulo-importante{
+  font-size: 20px;
+ }
+ .texto-descriptivo{
+  font-size: 18px;
+ }
+ .texto-card{
+  font-size: 18px;
+ }
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+@media (max-width: 480px){ 
+ .contenedor-gral{
+  padding: 24px;
+  min-width: 250px;
+ }
+ .headline1 {
+  font-size: 24px;
+ }
+ .titulo-importante {
+  font-size: 20px;
+ }
+ .subtitulo-importante{
+  font-size: 18px;
+ }
+ .texto-descriptivo{
+  font-size: 16px;
+ }
+ .texto-card{
+  font-size: 16px;
+ }
 }

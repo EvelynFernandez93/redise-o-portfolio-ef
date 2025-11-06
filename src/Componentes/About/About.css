@@ -1,0 +1,103 @@
+.about-contenedor{
+ width: 100%;
+ height: auto;
+ padding: 24px;
+}
+
+.about-contenido{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ align-self: stretch;
+}
+
+.about-titulo{
+ display: flex;
+ padding: 24px 0;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ gap: 10px;
+ align-self: stretch;
+}
+
+.about-descripcion{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 48px;
+ align-self: stretch;
+}
+
+.about-img{
+ display: flex;
+ padding: 24px;
+ align-items: center;
+ gap: 10px;
+
+/* ESTILO */
+ border-radius: 137px;
+ background: rgba(55, 108, 60, 0.40);
+
+/* M3/Elevation Light/2 */
+ box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.30), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+}
+.about-inf{
+ align-self: stretch; 
+ display: flex;
+ width: 364px;
+ height: auto;
+ flex-direction: column;
+ align-items: flex-start;
+ gap: 16px; 
+ justify-content: flex-start;
+}
+
+.a-img{
+ width: 258px;
+ height: 340px;
+ aspect-ratio: 129/170; 
+ border-radius: 110px;
+ background: url(<path-to-image>) lightgray 3.062px 0px / 98.724% 100.122% no-repeat;
+
+/* Blur/Overlay */
+ backdrop-filter: blur(calc(var(--sds-size-blur-100) / 2));
+}
+
+/*----------- Tablet---------- */
+@media (max-width: 780px){
+ .about-contenedor{
+ width: 100%;
+ height: auto;
+}
+
+.about-contenido{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ align-self: stretch;
+}
+
+.about-descripcion{
+ display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 32px;
+align-self: stretch;
+}
+
+.about-inf{
+ width: 304px;
+ min-width: 250px;
+ height: auto;
+}
+
+
+}
+/*------- Celular-------------*/
+@media (max-width: 480px){ 
+ 
+}

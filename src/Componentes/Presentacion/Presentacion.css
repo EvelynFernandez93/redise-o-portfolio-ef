@@ -1,0 +1,21 @@
+.inicio-contenedor{
+width: 100%;
+height: auto;
+}
+.inicio-contenido{
+    display: flex;
+height: 499px;
+justify-content: center;
+align-items: center;
+gap: 41px;
+flex: 1 0 0;
+background: radial-gradient(50% 50% at 50% 50%, #FDEBB9 0%, #FDEDC1 13.46%, #FEF7E1 37.5%, #FFF 100%);
+}
+.inicio-informacion{
+    display: flex;
+padding: 24px;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+gap: 24px;
+}
