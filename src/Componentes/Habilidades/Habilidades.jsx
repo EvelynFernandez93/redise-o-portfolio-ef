@@ -1,63 +1,38 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "../Habilidades/Habilidades.css";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 const HabilidadCard = ({ porcentaje, titulo, descripcion, index }) => {
-  const [visible, setVisible] = useState(false);
   const [valor, setValor] = useState(0);
-  const cardRef = useRef(null);
 
-  // Detectar cuando la card entra en pantalla
+  // Animación de número progresiva
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          unobserve(entry.target);
-        }
-      },
-      { threshold: 0.3 }
-    );
+    let start = 0;
+    const end = porcentaje;
+    const duration = 2000; // 2 segundos
+    const stepTime = 10;
+    const step = (end / duration) * stepTime;
 
-    if (cardRef.current) observer.observe(cardRef.current);
-    return () => unobserve(entry.target);
-  }, []);
+    const interval = setInterval(() => {
+      start += step;
+      if (start >= end) {
+        start = end;
+        clearInterval(interval);
+      }
+      setValor(Math.round(start));
+    }, stepTime);
 
-  // Animar número de 0 al porcentaje
-  useEffect(() => {
-    if (visible) {
-      let start = 0;
-      const end = porcentaje;
-      const duration = 2000; // ⏱️ Cambiado a 2 segundos
-      const stepTime = 10;
-      const step = (end / duration) * stepTime;
-      const interval = setInterval(() => {
-        start += step;
-        if (start >= end) {
-          start = end;
-          clearInterval(interval);
-        }
-        setValor(Math.round(start));
-      }, stepTime);
-      return () => clearInterval(interval);
-    }
-  }, [visible, porcentaje]);
+    return () => clearInterval(interval);
+  }, [porcentaje]);
 
   return (
-    <div
-      ref={cardRef}
-      className={`habilidades-cards ${visible ? "visible" : ""}`}
-      style={{ transitionDelay: `${index * 0.2}s` }} // delay en cascada
-    >
+    <div className="habilidades-cards animar" style={{ transitionDelay: `${index * 0.2}s` }}>
       <div className="habilidades-card-informacion">
         <p className="habilidades-numero">{valor}%</p>
         <p className="subtitulo-importante">{titulo}</p>
 
-        {/* Barra con fondo y relleno */}
         <div className="card-slide">
-          <div
-            className="card-slide-fill"
-            style={{ width: `${visible ? porcentaje : 0}%` }}
-          ></div>
+          <div className="card-slide-fill" style={{ width: `${valor}%` }}></div>
         </div>
       </div>
 
@@ -69,6 +44,8 @@ const HabilidadCard = ({ porcentaje, titulo, descripcion, index }) => {
 };
 
 const Habilidades = () => {
+  useScrollAnimation();
+
   const habilidades = [
     {
       porcentaje: 75,
@@ -91,7 +68,7 @@ const Habilidades = () => {
   ];
 
   return (
-    <div className="habilidades-contenedor">
+    <div className="habilidades-contenedor animar">
       <div className="habilidades-contenido">
         <div className="habilidades-titulo titulo-importante">
           <p>Mis habilidades</p>

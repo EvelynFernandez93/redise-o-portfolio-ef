@@ -1,33 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import "../Invitacion/Invitacion.css";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import Github from "../Icons/Github.svg";
 import Linkedin from "../Icons/Linkedin.svg";
 import Behance from "../Icons/Behance.svg";
 
 const Invitacion = () => {
-  const [visible, setVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          unobserve(entry.target);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => unobserve(entry.target);
-  }, []);
+  // Activar el hook global de animaciones
+  useScrollAnimation();
 
   return (
-    <div
-      ref={sectionRef}
-      className={`invitacion-contenedor ${visible ? "visible" : ""}`}
-    >
+    <div className="invitacion-contenedor animar">
       <div className="invitacion-contenido">
         <div className="invitacion-inf">
           <div className="invitacion-titulo">

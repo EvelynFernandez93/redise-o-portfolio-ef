@@ -1,30 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import "../About/About.css";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 const About = () => {
-  const [visible, setVisible] = useState(false);
-  const aboutRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          unobserve(entry.target);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (aboutRef.current) observer.observe(aboutRef.current);
-    return () => unobserve(entry.target);
-  }, []);
+  // Activa el hook global para observar todos los elementos con clase .animar
+  useScrollAnimation();
 
   return (
-    <div
-      ref={aboutRef}
-      className={`about-contenedor ${visible ? "visible" : ""}`}
-    >
+    <div className="about-contenedor animar">
       <div className="about-contenido">
         <div className="about-titulo titulo-importante">
           <p>¿Qué puedo contarte sobre mí?</p>

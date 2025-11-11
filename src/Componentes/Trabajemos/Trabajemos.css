@@ -4,44 +4,49 @@
   min-width: 250px;
   flex-direction: column;
   align-items: center;
-  padding: 48px 24px;
+  padding: 64px 24px;
   background: var(--Foundation-Secundario-secundario-500, #223b3e);
   overflow: hidden;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.trabajemos-contenedor.visible {
-  opacity: 1;
-  transform: translateY(0);
+  text-align: center;
 }
 
 .trabajemos-contenido {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 32px;
   max-width: 900px;
 }
 
 .trabajemos-titulo {
   padding: 16px 0;
   color: var(--Foundation-Primario-primario-200, #fbe297);
-  text-align: center;
   font-family: "Barlow", sans-serif;
   font-size: 20px;
   line-height: 1.6;
+}
+
+/* ----------- Animaciones de entrada ----------- */
+.animar .trabajemos-titulo,
+.animar .boton-terciario {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 1s ease 0.2s;
+  transition: all 1s ease;
 }
 
-.trabajemos-contenedor.visible .trabajemos-titulo {
+.animar.visible .trabajemos-titulo {
   opacity: 1;
   transform: translateY(0);
+  transition-delay: 0.3s;
 }
 
+.animar.visible .boton-terciario {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+/* ----------- Botón MD3 ----------- */
 .boton-terciario {
   display: inline-flex;
   align-items: center;
@@ -64,28 +69,22 @@
     0px 1px 2px rgba(0, 0, 0, 0.05),
     0px 3px 6px rgba(0, 0, 0, 0.15),
     0px 6px 12px rgba(0, 0, 0, 0.1);
-
   transition:
     background-color 0.3s ease,
     box-shadow 0.3s ease,
     transform 0.1s ease,
     opacity 0.3s ease;
 
-  opacity: 0;
-  transform: translateY(20px);
+  animation: pulso 6s ease-in-out infinite;
 }
 
-.trabajemos-contenedor.visible .boton-terciario {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.6s;
-}
-
+/* Hover y estados */
 .boton-terciario:hover {
   background-color: #fdebb9;
   box-shadow:
     0px 4px 8px rgba(0, 0, 0, 0.15),
     0px 6px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 .boton-terciario:focus-visible {
@@ -99,6 +98,7 @@
   transform: scale(0.98);
 }
 
+/* Ripple */
 .boton-terciario::after {
   content: "";
   position: absolute;
@@ -120,6 +120,7 @@
   transition: 0s;
 }
 
+/* Brillo diagonal sutil */
 .boton-terciario::before {
   content: "";
   position: absolute;
@@ -149,9 +150,9 @@
   }
 }
 
+/* Pulso suave */
 @keyframes pulso {
-  0%,
-  100% {
+  0%, 100% {
     transform: scale(1);
   }
   50% {
@@ -159,10 +160,7 @@
   }
 }
 
-.boton-terciario {
-  animation: pulso 5s ease-in-out infinite;
-}
-
+/* ----------- Responsive ----------- */
 @media (max-width: 768px) {
   .trabajemos-titulo {
     font-size: 18px;

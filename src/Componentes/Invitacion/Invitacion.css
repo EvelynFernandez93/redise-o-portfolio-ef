@@ -7,14 +7,6 @@
   align-items: center;
   background: #fff9e9;
   padding: 64px 24px;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.invitacion-contenedor.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .invitacion-contenido {
@@ -32,14 +24,6 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1s ease 0.3s;
-}
-
-.invitacion-contenedor.visible .invitacion-inf {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .invitacion-titulo p {
@@ -58,19 +42,12 @@
   margin: 0;
 }
 
+/* ---- ICONOS ---- */
 .invitacion-iconos {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 32px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1s ease 0.6s;
-}
-
-.invitacion-contenedor.visible .invitacion-iconos {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .icono-link {
@@ -83,6 +60,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   transition: all 0.3s ease;
 }
 
@@ -105,7 +83,7 @@
   transform: scale(0.95);
 }
 
-/* -------------------- ANIMACIÓN EXTRA (BRILLO EN ICONOS) -------------------- */
+/* ---- BRILLO ANIMADO EN ICONOS ---- */
 .icono-link::before {
   content: "";
   position: absolute;
@@ -135,6 +113,7 @@
   }
 }
 
+/* ---- RESPONSIVE ---- */
 @media (max-width: 768px) {
   .invitacion-titulo p {
     font-size: 26px;

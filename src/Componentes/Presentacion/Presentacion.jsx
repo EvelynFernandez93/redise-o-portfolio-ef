@@ -1,30 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import "../Presentacion/Presentacion.css";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 const Presentacion = () => {
-  const [visible, setVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          unobserve(entry.target);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => unobserve(entry.target);
-  }, []);
+  // Hook global para activar las animaciones
+  useScrollAnimation();
 
   return (
-    <section
-      ref={sectionRef}
-      className={`inicio-contenedor ${visible ? "visible" : ""}`}
-    >
+    <section className="inicio-contenedor animar">
       <div className="inicio-contenido">
         <div className="inicio-informacion">
           <h1 className="headline1">¡Hola, soy Evelyn Fernández!</h1>

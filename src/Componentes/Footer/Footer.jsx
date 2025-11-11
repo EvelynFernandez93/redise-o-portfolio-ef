@@ -1,16 +1,22 @@
-import React from 'react';
+import React from "react";
 import "../Footer/Footer.css";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import Facebook from "../Icons/Facebook.svg";
 import Instagram from "../Icons/Instagram.svg";
 
 const Footer = () => {
+  // Activar el hook global
+  useScrollAnimation();
+
   return (
-    <div className="footer-contenedor">
+    <div className="footer-contenedor animar">
       <div className="footer-contenido">
 
         <div className="footer-contenido1 texto-descriptivo">
           <p>
-            Este proyecto fue hecho con mucho <strong className="resaltado">amor</strong>, ahh y también con <strong className="resaltado">React</strong>.
+            Este proyecto fue hecho con mucho{" "}
+            <strong className="resaltado">amor</strong>, ahh y también con{" "}
+            <strong className="resaltado">React</strong>.
           </p>
         </div>
 
@@ -40,10 +46,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer-contenido3 ">
+        <div className="footer-contenido3">
           <p>© 2025 Evelyn Fernandez</p>
         </div>
-
       </div>
     </div>
   );

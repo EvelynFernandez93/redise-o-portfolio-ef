@@ -1,31 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import "../Trabajemos/Trabajemos.css";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 const Trabajemos = () => {
-  const [visible, setVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  // Detectar cuando la sección entra en pantalla
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          unobserve(entry.target);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => unobserve(entry.target);
-  }, []);
+  // Hook global de animaciones de scroll
+  useScrollAnimation();
 
   return (
-    <div
-      ref={sectionRef}
-      className={`trabajemos-contenedor ${visible ? "visible" : ""}`}
-    >
+    <div className="trabajemos-contenedor animar">
       <div className="trabajemos-contenido">
         <div className="trabajemos-titulo texto-descriptivo">
           <p>
@@ -43,4 +25,3 @@ const Trabajemos = () => {
 };
 
 export default Trabajemos;
-
