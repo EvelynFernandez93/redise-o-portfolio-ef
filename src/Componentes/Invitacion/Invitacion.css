@@ -1,65 +1,165 @@
-.invitacion-contenedor{
-display: flex;
-width: 100%;
-min-width: 250px;
-height: auto;
-flex-direction: column;
-justify-content: space-between;
-align-items: flex-start;
-align-self: stretch;
-background: #FFF9E9;
-padding: 24px;
+.invitacion-contenedor {
+  display: flex;
+  width: 100%;
+  min-width: 250px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff9e9;
+  padding: 64px 24px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
 }
-.invitacion-contenido{
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 24px;
-align-self: stretch;
-}
-.invitacion-inf{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 24px;
-align-self: stretch;
-}
-.invitacion-iconos{
-display: flex;
-align-items: center;
-gap: 24px;
-}
-.icono-link{
-width: 44px;
-height: 44px;
-border-radius: 23px;
-border: 0.5px solid var(--Foundation-Secundario-secundario-100, #BAC2C3);
-background: #FFF;
-box-shadow: 0 4px 5.7px 0 rgba(0, 0, 0, 0.25);
-display: inline-flex;
-padding: 10px;
-justify-content: center;
-align-items: center;
-gap: 10px;
-}
-.icono-img{
 
-width: 24px;
-height: 24px;
-stroke-width: 0.5px;
-stroke: var(--Foundation-Secundario-secundario-500, #223B3E);
-
+.invitacion-contenedor.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
+
+.invitacion-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+  max-width: 900px;
+}
+
+.invitacion-inf {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease 0.3s;
+}
+
+.invitacion-contenedor.visible .invitacion-inf {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.invitacion-titulo p {
+  font-family: "Atma", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #223b3e;
+  margin: 0;
+}
+
+.invitacion-subtitulo p {
+  font-family: "Barlow", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #4e5a5e;
+  margin: 0;
+}
+
+.invitacion-iconos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease 0.6s;
+}
+
+.invitacion-contenedor.visible .invitacion-iconos {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.icono-link {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid #bac2c3;
+  background: #fff;
+  box-shadow: 0 4px 5.7px rgba(0, 0, 0, 0.25);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.icono-img {
+  width: 28px;
+  height: 28px;
+}
+
 .icono-link:hover {
-  border-radius: 23px;
-border: 0.5px solid var(--Foundation-Primario-primario-500, #F7C01D);
-background: var(--Foundation-Primario-primario-100, #FDEBB9);
-box-shadow: 0 4px 5.7px 0 rgba(0, 0, 0, 0.25);
+  background: #fdebb9;
+  border-color: #f7c01d;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 6px 16px rgba(0, 0, 0, 0.1);
 }
+
 .icono-link:active {
-  border-radius: 23px;
-border: 0.5px solid var(--Foundation-Secundario-secundario-100, #BAC2C3);
-background: var(--Foundation-Secundario-secundario-100, #BAC2C3);
-box-shadow: 0 4px 5.7px 0 rgba(0, 0, 0, 0.25);
+  background: #bac2c3;
+  transform: scale(0.95);
+}
+
+/* -------------------- ANIMACIÓN EXTRA (BRILLO EN ICONOS) -------------------- */
+.icono-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  animation: brillo 5s linear infinite;
+}
+
+@keyframes brillo {
+  0% {
+    left: -100%;
+  }
+  20% {
+    left: 120%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+
+@media (max-width: 768px) {
+  .invitacion-titulo p {
+    font-size: 26px;
+  }
+  .invitacion-subtitulo p {
+    font-size: 18px;
+  }
+  .invitacion-iconos {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .invitacion-titulo p {
+    font-size: 22px;
+  }
+  .invitacion-subtitulo p {
+    font-size: 16px;
+  }
+  .icono-link {
+    width: 44px;
+    height: 44px;
+  }
+  .icono-img {
+    width: 24px;
+    height: 24px;
+  }
 }

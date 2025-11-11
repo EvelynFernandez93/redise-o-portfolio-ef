@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../About/About.css";
 
 const About = () => {
+  const [visible, setVisible] = useState(false);
+  const aboutRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (aboutRef.current) observer.observe(aboutRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="about-contenedor">
+    <div
+      ref={aboutRef}
+      className={`about-contenedor ${visible ? "visible" : ""}`}
+    >
       <div className="about-contenido">
-        <div className="about-titulo ">
+        <div className="about-titulo titulo-importante">
           <p>¿Qué puedo contarte sobre mí?</p>
         </div>
 
@@ -18,7 +39,7 @@ const About = () => {
             />
           </div>
 
-          <div className="about-inf ">
+          <div className="about-inf texto-descriptivo">
             <p>
               Soy <strong className="resaltado">Evelyn Fernández</strong>,
               Diseñadora <strong className="resaltado">UX/UI</strong> y

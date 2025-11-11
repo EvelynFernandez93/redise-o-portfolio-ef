@@ -1,20 +1,39 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../Invitacion/Invitacion.css";
-
-// Importá tus íconos como imágenes normales
 import Github from "../Icons/Github.svg";
 import Linkedin from "../Icons/Linkedin.svg";
 import Behance from "../Icons/Behance.svg";
 
 const Invitacion = () => {
+  const [visible, setVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="invitacion-contenedor">
+    <div
+      ref={sectionRef}
+      className={`invitacion-contenedor ${visible ? "visible" : ""}`}
+    >
       <div className="invitacion-contenido">
-        <div className="invitacion-inf subtitulo-importante">
-          <div className="titulo-importante">
+        <div className="invitacion-inf">
+          <div className="invitacion-titulo">
             <p>Te invito a conocerme</p>
           </div>
-          <div className="subtitulo-importante">
+          <div className="invitacion-subtitulo">
             <p>Estos son mis perfiles profesionales</p>
           </div>
         </div>
