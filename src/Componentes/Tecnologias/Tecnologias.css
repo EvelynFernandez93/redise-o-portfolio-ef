@@ -7,6 +7,7 @@
   background: #FFF;
   color: var(--Foundation-Secundario-secundario-500, #223B3E);
   text-align: center;
+  min-width: 250px ;
 }
 
 .tecnologias-titulo {
@@ -39,7 +40,6 @@ gap: 10px;
   }
 }
 
-/* --- íconos individuales --- */
 .tecnologia-item {
   display: flex;
   flex-direction: column;
@@ -54,9 +54,7 @@ gap: 10px;
   width: 60px;
   height: 60px;
   fill: var(--Foundation-Primario-primario-50, #FEF9E8);
-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
-  /* object-fit: contain; */
-  /* filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.3)); */
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
   transition: transform 0.3s ease;
 }
 
@@ -66,14 +64,13 @@ filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 
 .tecnologia-item p {
  color: var(--Foundation-Secundario-secundario-500, #223B3E);
-font-family: "Sans Serif Collection";
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 20px; /* 125% */
+ font-family: "Sans Serif Collection";
+ font-size: 16px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: 20px;
 }
 
-/* 📱 Responsive */
 @media (max-width: 768px) {
   .carrusel-track {
     animation: scroll 25s linear infinite;

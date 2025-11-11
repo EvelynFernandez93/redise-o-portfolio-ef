@@ -62,6 +62,97 @@ font-weight: 400;
 line-height: 20px; /* 125% */
 
 }
+.boton-terciario {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 46px;
+  padding: 10px 32px;
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+
+  /* Colores base */
+  background-color: var(--Foundation-Primario-primario-400, #f9cd4a);
+  color: var(--Foundation-Secundario-secundario-700, #223b3e);
+
+  /* Tipografía */
+  font-family:  sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  /* Elevación MD3 */
+  box-shadow:
+    0px 1px 2px rgba(0, 0, 0, 0.05),
+    0px 3px 6px rgba(0, 0, 0, 0.15),
+    0px 6px 12px rgba(0, 0, 0, 0.1);
+
+  /* Animaciones */
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.1s ease;
+}
+
+/* Hover: elevación + color más claro */
+.boton-terciario:hover {
+  background-color: #fdebb9; /* tono más claro del primario */
+  box-shadow:
+    0px 4px 8px rgba(0, 0, 0, 0.15),
+    0px 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus (accesibilidad): borde de enfoque */
+.boton-terciario:focus-visible {
+  outline: 3px solid rgba(34, 59, 62, 0.3);
+  outline-offset: 2px;
+}
+
+/* Active / Pressed: baja la elevación, cambia fondo */
+.boton-terciario:active {
+  background-color: var(--color-green-47, #658c6a);
+  color: var(--Foundation-Primario-primario-400, #f9cd4a);
+  transform: scale(0.98);
+  box-shadow:
+    0px 1px 2px rgba(0, 0, 0, 0.2),
+    0px 3px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Estado deshabilitado */
+.boton-terciario:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Efecto de onda / ink ripple simulado */
+.boton-terciario::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease, opacity 1s ease;
+  opacity: 0;
+}
+
+.boton-terciario:active::after {
+  width: 300%;
+  height: 300%;
+  opacity: 0.4;
+  transition: 0s;
+}
+
+
 @media (max-width: 780px){
  .contenedor-gral{
   padding: 24px;
