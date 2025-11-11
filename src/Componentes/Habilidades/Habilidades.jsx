@@ -1,38 +1,68 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../Habilidades/Habilidades.css";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 const HabilidadCard = ({ porcentaje, titulo, descripcion, index }) => {
+  const [visible, setVisible] = useState(false);
   const [valor, setValor] = useState(0);
+  const cardRef = useRef(null);
 
-  // Animación de número progresiva
+  // Activar animación al entrar en pantalla
   useEffect(() => {
-    let start = 0;
-    const end = porcentaje;
-    const duration = 2000; // 2 segundos
-    const stepTime = 10;
-    const step = (end / duration) * stepTime;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.3 }
+    );
 
-    const interval = setInterval(() => {
-      start += step;
-      if (start >= end) {
-        start = end;
-        clearInterval(interval);
-      }
-      setValor(Math.round(start));
-    }, stepTime);
+    if (cardRef.current) observer.observe(cardRef.current);
+    return () => observer.disconnect();
+  }, []);
 
-    return () => clearInterval(interval);
-  }, [porcentaje]);
+  // Animar número de 0 → porcentaje (solo cuando visible)
+  useEffect(() => {
+    if (visible) {
+      let start = 0;
+      const end = porcentaje;
+      const duration = 2000;
+      const stepTime = 10;
+      const step = (end / duration) * stepTime;
+
+      const interval = setInterval(() => {
+        start += step;
+        if (start >= end) {
+          start = end;
+          clearInterval(interval);
+        }
+        setValor(Math.round(start));
+      }, stepTime);
+
+      return () => clearInterval(interval);
+    }
+  }, [visible, porcentaje]);
 
   return (
-    <div className="habilidades-cards animar" style={{ transitionDelay: `${index * 0.2}s` }}>
+    <div
+      ref={cardRef}
+      className={`habilidades-cards animar ${visible ? "visible" : ""}`}
+      style={{ transitionDelay: `${index * 0.2}s` }}
+    >
       <div className="habilidades-card-informacion">
         <p className="habilidades-numero">{valor}%</p>
         <p className="subtitulo-importante">{titulo}</p>
 
         <div className="card-slide">
-          <div className="card-slide-fill" style={{ width: `${valor}%` }}></div>
+          <div
+            className="card-slide-fill"
+            style={{
+              width: visible ? `${valor}%` : "0%",
+              transition: "width 2s ease-in-out",
+            }}
+          ></div>
         </div>
       </div>
 

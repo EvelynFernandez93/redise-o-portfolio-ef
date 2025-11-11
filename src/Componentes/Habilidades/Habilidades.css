@@ -103,8 +103,8 @@
   background: linear-gradient(90deg, #e1af1a, #f5d95e);
   border-radius: 4px;
   width: 0%;
-  transition: width 2s ease-in-out;
 }
+
 
 /* ---------- DESCRIPCIÓN ---------- */
 .habilidades-card-descripcion {

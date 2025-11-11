@@ -3,7 +3,7 @@ import "../About/About.css";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 const About = () => {
-  // Activa el hook global para observar todos los elementos con clase .animar
+  // Hook global que activa animaciones .animar al entrar en pantalla
   useScrollAnimation();
 
   return (
@@ -14,7 +14,7 @@ const About = () => {
         </div>
 
         <div className="about-descripcion">
-          <div className="about-img">
+          <div className="about-img animar">
             <img
               className="a-img"
               src="/Img-about.png"
@@ -22,21 +22,21 @@ const About = () => {
             />
           </div>
 
-          <div className="about-inf texto-descriptivo">
+          <div className="about-inf texto-descriptivo animar">
             <p>
-              Soy <strong className="resaltado">Evelyn Fernández</strong>,
-              Diseñadora <strong className="resaltado">UX/UI</strong> y
-              Desarrolladora Frontend de Mendoza, Argentina. Me apasiona
-              convertir ideas en experiencias digitales que conecten con las
-              personas y reflejen la esencia de cada marca. <br />
-              <br />
-              Disfruto colaborar con emprendedores y empresas para construir
-              identidades visuales coherentes, interfaces funcionales y sitios
-              web centrados en el usuario. <br />
-              <br />
-              Me definen la creatividad, la organización y un enfoque empático
-              y colaborativo. Creo que un buen diseño no solo se ve bien, sino
-              que comunica, funciona y genera confianza.
+              Soy <strong className="resaltado">Evelyn Fernández</strong>, 
+              Diseñadora <strong className="resaltado">UX/UI</strong> y 
+              Desarrolladora Frontend de Mendoza, Argentina. 
+              Me apasiona convertir ideas en experiencias digitales que conecten 
+              con las personas y reflejen la esencia de cada marca. <br /><br />
+              
+              Disfruto colaborar con emprendedores y empresas para construir 
+              identidades visuales coherentes, interfaces funcionales y sitios 
+              web centrados en el usuario. <br /><br />
+              
+              Me definen la creatividad, la organización y un enfoque empático 
+              y colaborativo. Creo que un buen diseño no solo se ve bien, 
+              sino que comunica, funciona y genera confianza.
             </p>
           </div>
         </div>
