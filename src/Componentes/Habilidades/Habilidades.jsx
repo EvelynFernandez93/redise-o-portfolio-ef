@@ -12,14 +12,14 @@ const HabilidadCard = ({ porcentaje, titulo, descripcion, index }) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          observer.disconnect();
+          observer.unobserve(entry.target);
         }
       },
       { threshold: 0.3 }
     );
 
     if (cardRef.current) observer.observe(cardRef.current);
-    return () => observer.disconnect();
+    return () => observer.unobserve(entry.target);
   }, []);
 
   // Animar número de 0 al porcentaje

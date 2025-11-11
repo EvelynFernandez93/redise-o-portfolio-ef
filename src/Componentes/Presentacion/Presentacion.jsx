@@ -10,14 +10,14 @@ const Presentacion = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          observer.disconnect();
+          observer.unobserve(entry.target);
         }
       },
       { threshold: 0.2 }
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
+    return () => observer.unobserve(entry.target);
   }, []);
 
   return (

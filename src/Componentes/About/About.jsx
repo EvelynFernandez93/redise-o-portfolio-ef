@@ -10,14 +10,14 @@ const About = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          observer.disconnect();
+          observer.unobserve(entry.target);
         }
       },
       { threshold: 0.2 }
     );
 
     if (aboutRef.current) observer.observe(aboutRef.current);
-    return () => observer.disconnect();
+    return () => observer.unobserve(entry.target);
   }, []);
 
   return (
