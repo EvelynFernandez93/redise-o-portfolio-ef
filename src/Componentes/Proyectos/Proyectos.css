@@ -1,0 +1,183 @@
+/* -------------------- ANIMACIÓN DE ENTRADA -------------------- */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------------- CONTENEDOR PRINCIPAL -------------------- */
+.proyectos-contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0;
+  background-color: #f5f5f5;
+  gap: 32px;
+  width: 100%;
+  height: auto;
+  animation: fadeSlideUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.proyectos-contenedor.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------- TÍTULO -------------------- */
+.proyecto-titulo {
+  color: #1e5d6e;
+  font-family: "Kanit", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+  animation: fadeSlideUp 1s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.proyecto-titulo.visible {
+  opacity: 1;
+}
+
+/* -------------------- CARRUSEL -------------------- */
+.carrousel-botones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  position: relative;
+  animation: fadeSlideUp 1s ease forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.carrousel-botones.visible {
+  opacity: 1;
+}
+
+.proyectos-carrousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 20px;
+  scroll-behavior: smooth;
+  width: 90%;
+  justify-content: flex-start;
+}
+
+.proyectos-carrousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.proyectos-carrousel::-webkit-scrollbar-thumb {
+  background: #4e5a5e;
+  border-radius: 10px;
+}
+
+.card-proyecto {
+  scroll-snap-align: center;
+  flex: 0 0 auto;
+}
+
+/* -------------------- BOTONES -------------------- */
+.carrousel-botones button {
+  background: #1e5d6e;
+  color: white;
+  border: none;
+  font-size: 28px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carrousel-botones button:hover {
+  background: #37a9c8;
+  transform: scale(1.1);
+}
+
+.carrousel-botones button:active {
+  transform: scale(0.92);
+  background: #2c7e98;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+
+/* 🔹 Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .proyectos-contenedor {
+    padding: 32px 0;
+    gap: 28px;
+  }
+
+  .proyecto-titulo {
+    font-size: 1.8rem;
+  }
+
+  .proyectos-carrousel {
+    gap: 16px;
+    width: 95%;
+  }
+
+  .carrousel-botones button {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+  }
+}
+
+/* 🔹 Mobile (480px - 767px) */
+@media (max-width: 767px) {
+  .proyectos-contenedor {
+    padding: 24px 0;
+    gap: 20px;
+  }
+
+  .proyecto-titulo {
+    font-size: 1.5rem;
+  }
+
+  .proyectos-carrousel {
+    width: 100%;
+    gap: 14px;
+    padding: 0 12px;
+  }
+
+  .carrousel-botones {
+    gap: 8px;
+  }
+
+  .carrousel-botones button {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+}
+
+/* 🔹 Extra small (menor a 480px) */
+@media (max-width: 480px) {
+  .proyecto-titulo {
+    font-size: 1.3rem;
+  }
+
+  .carrousel-botones button {
+    display: none; /* oculta flechas en mobile */
+  }
+
+  .proyectos-carrousel {
+    padding: 0 8px;
+  }
+}

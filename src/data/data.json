@@ -1,0 +1,58 @@
+
+[
+	
+	{"id": 10,
+	  "nombre": "SP - servicios",
+	  "subtitulo": "Identidad de maarca",
+	  "descripcion": "Proyecto real, desarrollado de forma freelance para grupo de trabajadores autonomos, el objetivo es definir colores, tipografias y tono de comunicación",
+	  "enlace": "sp-identidad.png",
+	  "tecnologias":[
+		{
+			"tec" : " Illustator"
+		},{
+			"tec" : "Photoshop"
+		},
+		{
+			"tec" : "Figma"
+		}
+
+	  ]
+	  
+	 
+	 
+	},
+	{"id": 10,
+	  "nombre": "SP - servicios",
+	  "subtitulo": "Desarrollo Frontend",
+	  "descripcion": "Aplicación de diseño desarrollado en la etapa de Diseño UX/UI",
+	  "enlace": "img10.png",
+	  "tecnologias":[
+		{
+			"tec" : "Figma"
+		},{
+			"tec" : "HTML"
+		},
+		{
+			"tec" : "CSS"
+		},
+		{
+			"tec" : "Bootstrap"
+		},
+		{
+			"tec" : "Node.js"
+		},
+		{
+			"tec" : "JavaScript"
+		},
+		{
+			"tec" : "React"
+		}
+
+	  ]
+	  
+	 
+	 
+	}
+
+
+	]

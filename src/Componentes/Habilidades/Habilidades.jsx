@@ -3,11 +3,11 @@ import "../Habilidades/Habilidades.css";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 const HabilidadCard = ({ porcentaje, titulo, descripcion, index }) => {
-  const [visible, setVisible] = useState(false);
   const [valor, setValor] = useState(0);
+  const [visible, setVisible] = useState(false);
   const cardRef = useRef(null);
 
-  // Activar animación al entrar en pantalla
+  // Detectar visibilidad
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -23,15 +23,14 @@ const HabilidadCard = ({ porcentaje, titulo, descripcion, index }) => {
     return () => observer.disconnect();
   }, []);
 
-  // Animar número de 0 → porcentaje (solo cuando visible)
+  // Animar número y barra sincronizados
   useEffect(() => {
     if (visible) {
       let start = 0;
       const end = porcentaje;
-      const duration = 2000;
-      const stepTime = 10;
-      const step = (end / duration) * stepTime;
-
+      const duration = 2000; // 2s
+      const frameRate = 10;
+      const step = (end / (duration / frameRate));
       const interval = setInterval(() => {
         start += step;
         if (start >= end) {
@@ -39,7 +38,7 @@ const HabilidadCard = ({ porcentaje, titulo, descripcion, index }) => {
           clearInterval(interval);
         }
         setValor(Math.round(start));
-      }, stepTime);
+      }, frameRate);
 
       return () => clearInterval(interval);
     }
@@ -56,12 +55,10 @@ const HabilidadCard = ({ porcentaje, titulo, descripcion, index }) => {
         <p className="subtitulo-importante">{titulo}</p>
 
         <div className="card-slide">
+          {/* sincronizado con el valor */}
           <div
             className="card-slide-fill"
-            style={{
-              width: visible ? `${valor}%` : "0%",
-              transition: "width 2s ease-in-out",
-            }}
+            style={{ width: `${valor}%` }}
           ></div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import Tecnologias from '../Tecnologias/Tecnologias'
 import Habilidades from '../Habilidades/Habilidades'
 import Trabajemos from '../Trabajemos/Trabajemos'
 import Footer from '../Footer/Footer'
+import Proyectos from '../Proyectos/Proyectos'
 const Inicio = () => {
   return (
     <div>
@@ -15,6 +16,7 @@ const Inicio = () => {
       <About />
       <Invitacion />
       <Habilidades />
+      <Proyectos />
       <Trabajemos />
       <Footer />
     </div>

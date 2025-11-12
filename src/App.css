@@ -4,6 +4,17 @@
   /* padding: 2rem;
   text-align: center; */
 }
+/* Animación global para elementos observados */
+.animar {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.animar.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .contenedor-gral{
   width: 100%;
