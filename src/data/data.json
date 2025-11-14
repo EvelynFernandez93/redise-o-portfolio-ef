@@ -46,7 +46,34 @@
 			"tec" : "React"
 		}
 	  ]
+	},
+	{"id": 3,
+	  "nombre": "Rediseño Garnier",
+	  "subtitulo": "Diseño UX/ UI",
+	  "img": "rediseño-garnier.png",
+	  "descripcion": "Propuesta de rediseño para Garnier Argentina",
+	  "enlace": "https://www.behance.net/gallery/215360597/Redisenando-Garnier",
+	  "tecnologias":[
+		{
+			"tec" : "Figma"
+		},{
+			"tec" : "Photoshop"
+		},
+		{
+			"tec" : " Illustator"
+		}
+	  ]
+	},
+	{"id": 4,
+	  "nombre": "Community for mobile",
+	  "subtitulo": "Diseño UX (Research)",
+	  "img": "Community.png",
+	  "descripcion": "Proyecto de investivación para el diseño de una App para celular",
+	  "enlace": "https://www.behance.net/gallery/215359993/Community-UX-UI",
+	  "tecnologias":[
+		{
+			"tec" : "Figma"
+		}
+	  ]
 	}
-
-
 	]
