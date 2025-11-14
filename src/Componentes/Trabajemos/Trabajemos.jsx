@@ -1,7 +1,7 @@
 import React from "react";
 import "../Trabajemos/Trabajemos.css";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
-
+import { Link } from 'react-router-dom'
 const Trabajemos = () => {
   // Hook global de animaciones de scroll
   useScrollAnimation();
@@ -15,10 +15,9 @@ const Trabajemos = () => {
             digital con una mirada estratégica y humana, ¡hablemos!
           </p>
         </div>
-
-        <button className="boton-terciario">
-          <span>Contactar</span>
-        </button>
+        <Link to={'mailto:endeveloper1@gmail.com'} target="_blank">
+                            <div className='boton-terciario'>Contactar</div>
+            </Link>
       </div>
     </div>
   );
