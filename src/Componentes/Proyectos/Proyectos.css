@@ -33,15 +33,14 @@
 
 /* -------------------- TÍTULO -------------------- */
 .proyecto-titulo {
-  color: #1e5d6e;
-  font-family: "Kanit", sans-serif;
-  font-size: 2rem;
-  font-weight: 600;
-  text-align: center;
-  line-height: 1.2;
-  animation: fadeSlideUp 1s ease forwards;
-  animation-delay: 0.2s;
-  opacity: 0;
+color: var(--color-green-20, #2A3B2D);
+text-align: center;
+/* Títulos importantes */
+font-family: Atma;
+font-size: 28px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px
 }
 
 .proyecto-titulo.visible {

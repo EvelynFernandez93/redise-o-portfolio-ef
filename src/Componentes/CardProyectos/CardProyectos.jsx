@@ -47,7 +47,7 @@ const CardProyectos = ({ proyecto }) => {
 
         <div className="card-proyecto-subtitulo">
           <p>
-            {proyecto.subtitulo} | {proyecto.diplomatura}
+            {proyecto.subtitulo}
           </p>
         </div>
 
