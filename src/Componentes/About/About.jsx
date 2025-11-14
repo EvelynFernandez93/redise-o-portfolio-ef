@@ -29,8 +29,7 @@ const About = () => {
           <div className="about-inf texto-descriptivo animar">
             <p>
               Soy <strong className="resaltado">Evelyn Fernández</strong>, 
-              Diseñadora <strong className="resaltado">UX/UI</strong> y 
-              Desarrolladora Frontend de Mendoza, Argentina. 
+              Diseñadora <strong className="resaltado">UX/UI</strong> y <strong className="resaltado">Desarrolladora Frontend </strong>de Mendoza, Argentina. 
               Me apasiona convertir ideas en experiencias digitales que conecten 
               con las personas y reflejen la esencia de cada marca. <br /><br />
               
