@@ -1,11 +1,12 @@
 
 [
 	
-	{"id": 10,
+	{"id": 1,
 	  "nombre": "SP - servicios",
 	  "subtitulo": "Identidad de maarca",
+	  "img": "sp-identidad.jpg",
 	  "descripcion": "Proyecto real, desarrollado de forma freelance para grupo de trabajadores autonomos, el objetivo es definir colores, tipografias y tono de comunicación",
-	  "enlace": "sp-identidad.png",
+	  "enlace": "https://www.behance.net/gallery/227415203/Brandboard-SP-servicios-para-la-construccion",
 	  "tecnologias":[
 		{
 			"tec" : " Illustator"
@@ -15,17 +16,14 @@
 		{
 			"tec" : "Figma"
 		}
-
 	  ]
-	  
-	 
-	 
 	},
-	{"id": 10,
+	{"id": 2,
 	  "nombre": "SP - servicios",
 	  "subtitulo": "Desarrollo Frontend",
+	  "img": "sp-desarrollo.png",
 	  "descripcion": "Aplicación de diseño desarrollado en la etapa de Diseño UX/UI",
-	  "enlace": "img10.png",
+	  "enlace": "https://sp-servicios.vercel.app/",
 	  "tecnologias":[
 		{
 			"tec" : "Figma"
@@ -47,11 +45,7 @@
 		{
 			"tec" : "React"
 		}
-
 	  ]
-	  
-	 
-	 
 	}
 
 

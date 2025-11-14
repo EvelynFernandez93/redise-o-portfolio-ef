@@ -33,7 +33,16 @@ const CardProyectos = ({ proyecto }) => {
 
       <div className="card-proyecto-contenido">
         <div className="card-titulo ">
-          <h3>{proyecto.nombre}</h3>
+          <h3>{proyecto.nombre}<a
+  href={proyecto.enlace}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="card-proyecto-enlace"
+  onClick={(e) => e.stopPropagation()}
+>
+  🔗
+</a></h3>
+          
         </div>
 
         <div className="card-proyecto-subtitulo">
@@ -51,6 +60,7 @@ const CardProyectos = ({ proyecto }) => {
         <div className="card-proyecto-descripcion">
           <p>{proyecto.descripcion}</p>
         </div>
+        
       </div>
     </div>
   );
