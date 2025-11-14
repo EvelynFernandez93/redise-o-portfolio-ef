@@ -43,7 +43,7 @@ const Invitacion = () => {
           </a>
 
           <a
-            href="https://www.behance.net/evelynfernandez"
+            href="https://www.behance.net/evelynfernandez1993"
             target="_blank"
             rel="noopener noreferrer"
             className="icono-link"
