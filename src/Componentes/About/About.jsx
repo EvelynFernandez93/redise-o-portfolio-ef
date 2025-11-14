@@ -1,10 +1,14 @@
 import React from "react";
 import "../About/About.css";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
-
+import { Link } from 'react-router-dom'
 const About = () => {
-  // Hook global que activa animaciones .animar al entrar en pantalla
   useScrollAnimation();
+
+  // 👉 Aquí va tu enlace de Canva
+  const abrirCV = () => {
+    window.open("https://www.canva.com/tu-link-aqui", "_blank");
+  };
 
   return (
     <div className="about-contenedor animar">
@@ -38,6 +42,8 @@ const About = () => {
               y colaborativo. Creo que un buen diseño no solo se ve bien, 
               sino que comunica, funciona y genera confianza.
             </p>
+            <Link to={"https://identidad-de-marca-ef.my.canva.site/cv-evelyn-fernandez-2025"} target="_blank"className='boton-terciario'>Ver CV</Link>
+        
           </div>
         </div>
       </div>

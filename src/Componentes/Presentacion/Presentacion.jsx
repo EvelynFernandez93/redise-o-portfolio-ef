@@ -3,8 +3,15 @@ import "../Presentacion/Presentacion.css";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 const Presentacion = () => {
-  // Hook global para activar las animaciones
   useScrollAnimation();
+
+  // 👉 Función para hacer scroll suave
+  const irAProyectos = () => {
+    const section = document.getElementById("proyectos");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section className="inicio-contenedor animar">
@@ -17,7 +24,11 @@ const Presentacion = () => {
           <p className="subtitulo-importante">
             Creo experiencias digitales accesibles y centradas en el usuario
           </p>
-          <button className="boton-terciario">Ver proyectos</button>
+
+          {/* 👉 Botón actualizado */}
+          <button className="boton-terciario" onClick={irAProyectos}>
+            Ver proyectos
+          </button>
         </div>
       </div>
     </section>

@@ -97,6 +97,30 @@
   font-weight: 600;
   color: #e1af1a;
 }
+.cv-boton {
+  margin-top: 20px;
+  padding: 10px 22px;
+  border-radius: 8px;
+  background: var(--Foundation-Terciario-terciario-500, #37A9C8);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.cv-boton:hover {
+  background: var(--Foundation-Terciario-terciario-600, #2f94af);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.cv-boton:active {
+  transform: scale(0.97);
+}
+
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 992px) {

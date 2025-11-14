@@ -94,6 +94,8 @@
 
 /* ---- Botón ---- */
 .boton-terciario {
+  text-decoration: none;   /* ❌ quita la línea */
+  color: inherit; 
   margin-top: 8px;
   display: inline-flex;
   align-items: center;

@@ -13,7 +13,7 @@ const Proyectos = () => {
   };
 
   return (
-    <div className="proyectos-contenedor">
+    <div className="proyectos-contenedor" id="proyectos">
       <h2 className="proyecto-titulo">Mis Proyectos más recientes</h2>
       <div className="carrousel-botones">
         <button onClick={() => scroll("left")}>‹</button>
