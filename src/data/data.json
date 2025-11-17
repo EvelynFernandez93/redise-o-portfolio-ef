@@ -1,79 +1,56 @@
-
 [
-	
-	{"id": 1,
-	  "nombre": "SP - servicios",
-	  "subtitulo": "Identidad de maarca",
-	  "img": "sp-identidad.jpg",
-	  "descripcion": "Proyecto real, desarrollado de forma freelance para grupo de trabajadores autonomos, el objetivo es definir colores, tipografias y tono de comunicación",
-	  "enlace": "https://www.behance.net/gallery/227415203/Brandboard-SP-servicios-para-la-construccion",
-	  "tecnologias":[
-		{
-			"tec" : " Illustator"
-		},{
-			"tec" : "Photoshop"
-		},
-		{
-			"tec" : "Figma"
-		}
-	  ]
-	},
-	{"id": 2,
-	  "nombre": "SP - servicios",
-	  "subtitulo": "Desarrollo Frontend",
-	  "img": "sp-desarrollo.png",
-	  "descripcion": "Aplicación de diseño desarrollado en la etapa de Diseño UX/UI",
-	  "enlace": "https://sp-servicios.vercel.app/",
-	  "tecnologias":[
-		{
-			"tec" : "Figma"
-		},{
-			"tec" : "HTML"
-		},
-		{
-			"tec" : "CSS"
-		},
-		{
-			"tec" : "Bootstrap"
-		},
-		{
-			"tec" : "Node.js"
-		},
-		{
-			"tec" : "JavaScript"
-		},
-		{
-			"tec" : "React"
-		}
-	  ]
-	},
-	{"id": 3,
-	  "nombre": "Rediseño Garnier",
-	  "subtitulo": "Diseño UX/ UI",
-	  "img": "rediseño-garnier.png",
-	  "descripcion": "Propuesta de rediseño para Garnier Argentina",
-	  "enlace": "https://www.behance.net/gallery/215360597/Redisenando-Garnier",
-	  "tecnologias":[
-		{
-			"tec" : "Figma"
-		},{
-			"tec" : "Photoshop"
-		},
-		{
-			"tec" : " Illustator"
-		}
-	  ]
-	},
-	{"id": 4,
-	  "nombre": "Community for mobile",
-	  "subtitulo": "Diseño UX (Research)",
-	  "img": "Community.png",
-	  "descripcion": "Proyecto de investivación para el diseño de una App de celular",
-	  "enlace": "https://www.behance.net/gallery/215359993/Community-UX-UI",
-	  "tecnologias":[
-		{
-			"tec" : "Figma"
-		}
-	  ]
-	}
-	]
+  {
+    "id": 1,
+    "nombre": "SP - servicios",
+    "subtitulo": "Identidad de marca",
+    "img": "sp-identidad.jpg",
+    "descripcion": "Proyecto real, desarrollado de forma freelance para un grupo de trabajadores autónomos. El objetivo es definir colores, tipografías y tono de comunicación.",
+    "enlace": "https://www.behance.net/gallery/227415203/Brandboard-SP-servicios-para-la-construccion",
+    "tecnologias": [
+      { "tec": "Illustrator" },
+      { "tec": "Photoshop" },
+      { "tec": "Figma" }
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "SP - servicios",
+    "subtitulo": "Desarrollo Frontend",
+    "img": "sp-desarrollo.png",
+    "descripcion": "Aplicación del diseño desarrollado en la etapa de Diseño UX/UI.",
+    "enlace": "https://sp-servicios.vercel.app/",
+    "tecnologias": [
+      { "tec": "Figma" },
+      { "tec": "HTML" },
+      { "tec": "CSS" },
+      { "tec": "Bootstrap" },
+      { "tec": "Node.js" },
+      { "tec": "JavaScript" },
+      { "tec": "React" }
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Rediseño Garnier",
+    "subtitulo": "Diseño UX/UI",
+    "img": "rediseño-garnier.png",
+    "descripcion": "Propuesta de rediseño para Garnier Argentina.",
+    "enlace": "https://www.behance.net/gallery/215360597/Redisenando-Garnier",
+    "tecnologias": [
+      { "tec": "Figma" },
+      { "tec": "Photoshop" },
+      { "tec": "Illustrator" }
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Community for mobile",
+    "subtitulo": "Diseño UX (Research)",
+    "img": "Community.png",
+    "descripcion": "Proyecto de investigación para el diseño de una app móvil.",
+    "enlace": "https://www.behance.net/gallery/215359993/Community-UX-UI",
+    "tecnologias": [
+      { "tec": "Figma" }
+    ]
+  }
+]

@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="footer-contenido1 texto-descriptivo">
           <p>
             Este proyecto fue hecho con mucho{" "}
-            <strong className="resaltado">amor</strong>, ahh y también con{" "}
+            <strong className="resaltado">amor</strong>, ah, y también con{" "}
             <strong className="resaltado">React</strong>.
           </p>
         </div>
