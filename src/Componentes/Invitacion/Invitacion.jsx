@@ -33,7 +33,7 @@ const Invitacion = () => {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/evelynfernandez93/"
+            href="https://www.linkedin.com/in/evelyn-fernandez-663995255"
             target="_blank"
             rel="noopener noreferrer"
             className="icono-link"
