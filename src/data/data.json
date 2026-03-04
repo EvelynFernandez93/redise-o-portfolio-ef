@@ -1,6 +1,20 @@
 [
+
   {
     "id": 1,
+    "nombre": "SP - servicios",
+    "subtitulo": "Rediseño",
+    "img": "redesign.png",
+    "descripcion": "Proyecto real, desarrollado de forma freelance para un grupo de trabajadores autónomos. El objetivo fué rediseñar el Diseño UX UI con una propuesta mas fresca, cubriendo las necesidades de nuestro cliente.",
+    "enlace": "https://sp-servicios-redesign.vercel.app/",
+    "tecnologias": [
+      { "tec": "Figma" },
+      { "tec": "React" },
+      { "tec": "Vite" }
+    ]
+  },
+  {
+    "id": 2,
     "nombre": "SP - servicios",
     "subtitulo": "Identidad de marca",
     "img": "sp-identidad.jpg",
@@ -13,7 +27,7 @@
     ]
   },
   {
-    "id": 2,
+    "id": 3,
     "nombre": "SP - servicios",
     "subtitulo": "Desarrollo Frontend",
     "img": "sp-desarrollo.png",
@@ -30,7 +44,7 @@
     ]
   },
   {
-    "id": 3,
+    "id": 4,
     "nombre": "Rediseño Garnier",
     "subtitulo": "Diseño UX/UI",
     "img": "rediseño-garnier.png",
@@ -43,7 +57,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "nombre": "Community for mobile",
     "subtitulo": "Diseño UX (Research)",
     "img": "Community.png",
