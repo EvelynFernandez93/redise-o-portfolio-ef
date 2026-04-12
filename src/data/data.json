@@ -1,7 +1,19 @@
-[
+[ {
+    "id": 1,
+    "nombre": "VA-paisajismo y gestión ambiental",
+    "subtitulo": "Desarrollo Web",
+    "img": "va-website.png",
+    "descripcion": "Proyecto real, desarrollado de forma freelance para Verónica Astargo. El objetivo fué crear la página web en base al Diseño UX-UI de la misma, cubriendo las necesidades de nuestro cliente.",
+    "enlace": "https://va-website-ten.vercel.app/",
+    "tecnologias": [
+      { "tec": "Figma" },
+      { "tec": "React" },
+      { "tec": "Vite" }
+    ]
+  },
 
   {
-    "id": 1,
+    "id": 2,
     "nombre": "SP - servicios",
     "subtitulo": "Rediseño",
     "img": "redesign.png",
@@ -14,7 +26,7 @@
     ]
   },
   {
-    "id": 2,
+    "id": 3,
     "nombre": "SP - servicios",
     "subtitulo": "Identidad de marca",
     "img": "sp-identidad.jpg",
@@ -27,7 +39,7 @@
     ]
   },
   {
-    "id": 3,
+    "id": 4,
     "nombre": "SP - servicios",
     "subtitulo": "Desarrollo Frontend",
     "img": "sp-desarrollo.png",
@@ -44,7 +56,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "nombre": "Rediseño Garnier",
     "subtitulo": "Diseño UX/UI",
     "img": "rediseño-garnier.png",
@@ -57,7 +69,7 @@
     ]
   },
   {
-    "id": 5,
+    "id": 6,
     "nombre": "Community for mobile",
     "subtitulo": "Diseño UX (Research)",
     "img": "Community.png",
